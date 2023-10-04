@@ -7,7 +7,7 @@ import profileExpandArrow from '../assets/images/Chevron-down.png';
 import closeIcon from '../assets/images/Close.png';
 import welocmeSectionImage from '../assets/images/Group 1770.png';
 
-import Task from '../components/Task';
+import TasksWrapper from '../components/Task';
 
 const Dashboard = () => {
   return (
@@ -49,7 +49,7 @@ const Dashboard = () => {
               <img src={closeIcon} alt="closeIcon" className="closeIcon"></img>
             </div>
             <div className="task-wrapper">
-              <Task />
+              <TasksWrapper />
             </div>
           </div>
         </div>
