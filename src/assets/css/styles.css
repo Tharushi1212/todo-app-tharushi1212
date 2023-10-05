@@ -1,4 +1,4 @@
-/* Your CSS rules go here */
+/* All the CSS rules go here */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@100;200;300;500;600;700;800;900&display=swap');
 
@@ -9,7 +9,6 @@ body {
 .dashboard-wrapper {
   display: flex;
   flex-direction: row;
-  /* max-width: 1440px; */
   width: 100%;
   margin: 0 auto;
   justify-content: center;
@@ -17,21 +16,22 @@ body {
 
 .acmy-sloution-section {
   width: 20%;
-  /* height: 900px; */
   background: var(--color-purple-400, #33074f);
   flex-shrink: 0;
+  row-gap: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dashboard-section {
   width: 80%;
-  /* height: 900px; */
   flex-shrink: 0;
   background: #fafafa;
 }
 
 .acmy-sloutions-header {
   width: 100%;
-  /* height: 80px; */
   background: rgba(235, 230, 237, 0.1);
   padding-top: 24px;
   padding-bottom: 24px;
@@ -50,15 +50,10 @@ text.acmy-sloutions {
   letter-spacing: -0.48px;
   margin: 0 auto;
   text-align: center;
-  /* margin-left: 49px; */
-  /* margin-right: 48px; */
-  /* padding-top: 24px; */
 }
 
 .dashboard-header {
   background: var(--color-white, #fff);
-  /* width: 1168px; */
-  /* height: 80px; */
   display: flex;
   padding-top: 24px;
   padding-bottom: 15px;
@@ -101,14 +96,9 @@ img.bellOff {
   position: relative;
   padding-bottom: 15px;
   padding: 16px 18px;
-  /* width: 100%; */
-  /* max-width: 1120px; */
-  /* height: 120px; */
   border-radius: 8px;
   border: 1px solid var(--color-strokes, #d0d5dd);
   background: var(--color-white, #fff);
-  /* margin-top: 24px; */
-  /* margin-left: 24px; */
   flex-shrink: 0;
   display: flex;
   flex-shrink: 0;
@@ -160,14 +150,6 @@ img.welocmeSectionImage {
   right: 64px;
   top: 0;
   display: absoli;
-  /* width: 167px; */
-  /* height: 120px; */
-  /* flex-shrink: 0; */
-}
-img.closeIcon {
-  /* margin-top: 16px;
-  margin-left: 24px;
-  margin-right: 16px; */
 }
 
 .status-button {
@@ -176,14 +158,11 @@ img.closeIcon {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* Text/Small/Medium */
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 22px; /* 183.333% */
-  /* border-radius: 16px; */
-  /* background: #E8F5E9; */
 }
 
 .In-progress-lable {
@@ -202,18 +181,20 @@ img.closeIcon {
 }
 
 .component-wrapper {
+  padding-left: 16px;
+  padding-bottom: 24px;
+  padding-right: 16px;
   display: flex;
-  max-width: 656px;
-  padding: 12px 16px 24px;
-  /* height: 632px; */
   border-radius: 8px;
   border: 1px solid var(--color-strokes, #d0d5dd);
   background: var(--color-white, #fff);
   margin-bottom: 20px;
-  /* margin-right: 24px; */
   flex-shrink: 0;
   flex-direction: column;
-  width: 60%;
+}
+
+td.task-grid-font-wrapper {
+  padding-top: 12px;
 }
 
 td.date {
@@ -226,6 +207,7 @@ td.date {
   line-height: 22px;
   color: #757575;
   width: 43px;
+  padding-top: 13px;
 }
 
 td.align-status-lable {
@@ -233,6 +215,7 @@ td.align-status-lable {
   justify-content: flex-end;
   align-items: center;
   padding-right: 10px;
+  padding-top: 11px;
 }
 
 .grid-font {
@@ -257,11 +240,6 @@ td.align-status-lable {
 }
 
 a {
-  /* display: inline-flex; */
-  /* padding: 4px 0px; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* gap: 8px; */
   color: #bc006d;
   font-family: Inter;
   font-size: 12px;
@@ -274,7 +252,6 @@ a {
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  /* padding-top: 14px; */
 }
 
 img.Low-priority-bell {
@@ -294,6 +271,7 @@ img.Medium-priority-bell {
 
 td.icon-bell {
   width: 28px;
+  padding-top: 18px;
 }
 
 td {
@@ -318,7 +296,6 @@ ul.pagination {
 
 ul.pagination li {
   border: 1px solid red;
-  /* padding: 5px; */
   width: 32px;
   height: 32px;
   text-align: center;
@@ -348,13 +325,8 @@ ul.pagination li :hover {
   display: flex;
   flex-direction: row;
   column-gap: 24px;
-}
-
-.grid-components-wrapper {
-  display: flex;
-  flex-direction: row;
-  column-gap: 24px;
   padding-top: 24px;
+  justify-content: space-between;
 }
 
 .activity-feed-grid {
@@ -413,7 +385,6 @@ td.activity-feed-body {
   align-items: flex-start;
   padding-top: 16px;
   padding-bottom: 16px;
-  /* padding: 16px; */
 }
 
 .activity-feed-date {
@@ -460,7 +431,6 @@ td.activity-feed-body {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
-  max-width: 456px;
 }
 
 .task-priority-wrapper {
@@ -517,20 +487,48 @@ img.legend-series-color {
   padding-top: 6px;
 }
 
-@media only screen and (max-width: 992px) {
+text.acmy-solutions-body-text {
+  color: var(--color-white, #fff);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.dashboard-column-wrapper {
+  border-radius: 24px;
+  background: rgba(235, 230, 237, 0.1);
+  width: 91%;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.acmy-solutions-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: 8px;
+  padding: 8px 12px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .d-none-mobile {
+    display: none;
+  }
   .dashboard-section {
     width: 100%;
-    /* height: 900px; */
     flex-shrink: 0;
     background: #fafafa;
   }
 
   .dashboard-wrapper {
+    position: relative;
     display: flex;
     flex-direction: row;
-    /* max-width: 1440px; */
     width: 100%;
     margin: 0;
+    overflow: hidden;
     justify-content: center;
   }
 
@@ -539,21 +537,6 @@ img.legend-series-color {
     flex-direction: column;
     column-gap: 0;
     padding-top: 24px;
-  }
-
-  .component-wrapper {
-    display: flex;
-    max-width: unset;
-    padding: 12px 16px 24px;
-    /* height: 632px; */
-    border-radius: 8px;
-    border: 1px solid var(--color-strokes, #d0d5dd);
-    background: var(--color-white, #fff);
-    margin-bottom: 20px;
-    /* margin-right: 24px; */
-    flex-shrink: 0;
-    flex-direction: column;
-    width: 100%;
   }
 
   .activity-feed-grid {
@@ -568,5 +551,128 @@ img.legend-series-color {
   .pagination-container {
     margin: 0 auto;
     max-width: 200px;
+  }
+
+  .pie-chart-and-description-wrapper {
+    padding: 24px 95px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .css-1blkw4v-MuiResponsiveChart-container {
+    padding-left: 95px;
+    padding-right: 32px;
+    width: 250px;
+    height: 200px;
+  }
+
+  .component-wrapper {
+    padding-left: 16px;
+    padding-bottom: 24px;
+    padding-right: 16px;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--color-strokes, #d0d5dd);
+    background: var(--color-white, #fff);
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    flex-direction: column;
+    min-width: fit-content;
+  }
+
+  .task-grid-wrapper {
+    width: 100%;
+  }
+  table.activity-feed-table {
+    width: 100%;
+  }
+
+  .task-priority-wrapper {
+    border-radius: 8px;
+    border: 1px solid var(--color-strokes, #d0d5dd);
+    background: var(--color-white, #fff);
+  }
+
+  .activity-feed-grid {
+    border-radius: 8px;
+    border: 1px solid var(--color-strokes, #d0d5dd);
+    background: var(--color-white, #fff);
+    min-width: unset;
+    padding: 16px;
+    padding-top: 0px;
+  }
+
+  .acmy-sloution-section {
+    position: absolute;
+    left: 0;
+    width: 2%;
+    transition: 0.3s;
+    height: 100%;
+    z-index: 999;
+    background: var(--color-purple-400, #33074f);
+  }
+
+  .acmy-sloution-section:hover {
+    width: 35%;
+    min-width: 217px;
+    transition: 0.3s;
+  }
+
+  .acmy-sloution-section .acmy-sloutions-header {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .acmy-sloution-section:hover .acmy-sloutions-header {
+    position: relative;
+    opacity: 1;
+    transition: 0.1s;
+  }
+
+  .acmy-sloution-section .dashboard-column-wrapper {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .acmy-sloution-section:hover .dashboard-column-wrapper {
+    position: relative;
+    opacity: 1;
+    transition: 0.1s;
+  }
+
+  .acmy-sloution-section:hover::after {
+    display: none;
+  }
+
+  .acmy-sloution-section::after {
+    content: '>';
+    font-size: 18px;
+    position: absolute;
+    color: #ffffff;
+    height: 20px;
+    width: 12px;
+    right: 0px;
+    font-weight: 900;
+    top: 276px;
+    background: #301a4e;
+    border-radius: 5px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .grid-components-right-wrapper {
+    width: 40%;
+  }
+  .task-grid-wrapper {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1350px) {
+  .grid-components-right-wrapper {
+    width: 50%;
+  }
+  .task-grid-wrapper {
+    width: 50%;
   }
 }

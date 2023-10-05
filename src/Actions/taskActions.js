@@ -2,11 +2,10 @@ import { setData } from '../redux/userSlice';
 
 export const fetchTasks = async (dispatch) => {
   try {
-    console.log('asdasdasd');
+    //fetch all the data from the given API
     const response = await fetch(
       'https://6363c8f68a3337d9a2e7d805.mockapi.io/api/to-do'
     );
-    // console.log(response);
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }

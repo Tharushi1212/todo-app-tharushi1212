@@ -1,9 +1,11 @@
+//Task priority chart component
 import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { useDispatch } from 'react-redux';
 import { fetchTasks } from '../Actions/taskActions';
 import { useSelector } from 'react-redux';
 
+//importing assets
 import '../assets/css/styles.css';
 import blue from '../assets/images/blue.png';
 import red from '../assets/images/red.png';
@@ -13,7 +15,7 @@ const TasksPriorities = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state?.user?.data);
 
-  //use effect to get all the taks data by given API
+  //call fetchTasks function to get all the taks data by given API
   React.useEffect(() => {
     fetchTasks(dispatch);
   }, []);
@@ -51,6 +53,7 @@ const TasksPriorities = () => {
 
       <div class="divider"></div>
 
+      {/* pie chart component wrapper and the MUI pie chart */}
       <div className="pie-chart-and-description-wrapper">
         <PieChart
           series={[
@@ -63,6 +66,7 @@ const TasksPriorities = () => {
           {...size}
         ></PieChart>
 
+        {/* task priority legend section */}
         <div className="task-priority-legend">
           <div className="legend-series">
             <img src={red} alt="colors" className="legend-series-color" />

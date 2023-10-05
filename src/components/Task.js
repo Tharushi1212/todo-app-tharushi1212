@@ -2,24 +2,25 @@ import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useDispatch } from 'react-redux';
 import { Provider } from 'react-redux';
-import store from '../redux/store';
-import { fetchTasks } from '../Actions/taskActions';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
+
+import store from '../redux/store';
+import { fetchTasks } from '../Actions/taskActions';
+import bell from '../assets/images/bell-ringing-03.png';
+import '../assets/css/styles.css';
 
 const Tasks = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const dispatch = useDispatch();
   const data = useSelector((state) => state?.user?.data);
+  const itemsPerPage = 8; // Number of items to display per page
+  const pageCount = Math.ceil(data?.length / itemsPerPage); // Calculate the total number of pages
 
-  console.log(data);
-
+  //call fetchTsks function to get all the data from given API
   useEffect(() => {
     fetchTasks(dispatch);
   }, []);
-
-  const itemsPerPage = 8; // Number of items to display per page
-  const pageCount = Math.ceil(data?.length / itemsPerPage); // Calculate the total number of pages
 
   // Slice the data array to display only the items for the current page
   const displayedData = data?.slice(
@@ -33,37 +34,74 @@ const Tasks = () => {
   };
 
   return (
-    <div>
+    // task table wrapper
+    <div className="component-wrapper">
+      {/* task table */}
       <table>
-        <thead>
-          <tr>
-            <th className="task-title-text">Tasks</th>
-          </tr>
-          <tr>
-            <th>id</th>
-            <th>todo</th>
-            <th>priority</th>
-            <th>createdBy</th>
-            <th>completed</th>
-          </tr>
-        </thead>
+        <thead className="activity-title-text">Tasks</thead>
+
         <tbody>
+          {/* map data fetched from the fetchTasks function */}
           {displayedData?.map((item, index) => (
             <tr key={index}>
-              <td>bell</td>
-              <td>{item.todo}</td>
-              <td>{item.priority}</td>
-              <td>{item.completed === false ? 'false' : 'true'}</td>
-              <td>{moment(item.createdAt).format('MMM DD')}</td>
+              <td className="icon-bell">
+                {/* define bell icons with priority */}
+                {item.priority === 'HIGH' ? (
+                  <img
+                    src={bell}
+                    alt="bell"
+                    className="High-priority-bell common-bell"
+                  />
+                ) : item.priority === 'MEDIUM' ? (
+                  <img
+                    src={bell}
+                    alt="bell"
+                    className="Medium-priority-bell common-bell"
+                  ></img>
+                ) : item.priority === 'LOW' ? (
+                  <img
+                    src={bell}
+                    alt="bell"
+                    className="Low-priority-bell common-bell"
+                  ></img>
+                ) : null}
+              </td>
+
+              {/* task */}
+              <td className="task-grid-font-wrapper">
+                <div className="grid-font">{item.todo}</div>
+
+                <button className="link-button">
+                  {item.completed === false ? <a>Mark as done</a> : <></>}
+                </button>
+              </td>
+
+              {/* done or in-progress lable */}
+              <td className="align-status-lable">
+                {item.completed === false ? (
+                  <label className="In-progress-lable status-button">
+                    In-progress
+                  </label>
+                ) : (
+                  <label className="done-lable status-button">Done</label>
+                )}
+              </td>
+
+              {/* created date */}
+              <td className="date">
+                {moment(item.createdAt).format('MMM DD')}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      {/* pagination wrapper */}
       <div className="pagination-container">
         {/* Pagination component */}
         <ReactPaginate
-          previousLabel={'Previous'}
-          nextLabel={'Next'}
+          previousLabel={'<'}
+          nextLabel={'>'}
           breakLabel={null}
           pageCount={pageCount}
           marginPagesDisplayed={2}
