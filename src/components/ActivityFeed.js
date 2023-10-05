@@ -32,37 +32,8 @@ const rows = [
   ),
 ];
 
-// const tableContainerStyle = {
-//   width: '440px', // Set the desired width
-//   height: '363px', // Set the desired height
-//   flexShrink: 0, // Prevent shrinking
-//   overflowX: 'hidden', // Hide horizontal scroll
-// };
-
 export default function BasicTable() {
   return (
-    // <TableContainer style={tableContainerStyle}>
-    //   <Table sx={{ minWidth: 650 }} aria-label="simple table">
-    //     <TableHead>
-    //       <TableRow>
-    //         <TableCell>Activity Feed</TableCell>
-    //       </TableRow>
-    //     </TableHead>
-    //     <TableBody>
-    //       {rows.map((row) => (
-    //         <TableRow
-    //           key={row.name}
-    //           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-    //         >
-    //           <TableCell component="th" scope="row" sx={{ width: '10%' }}>
-    //             <img className="avatar" src={row.avatar} alt="avatar"></img>
-    //             {row.name}
-    //           </TableCell>
-    //         </TableRow>
-    //       ))}
-    //     </TableBody>
-    //   </Table>
-    // </TableContainer>
     <table className="activity-feed-table">
       <thead>
         <th className="activity-title-text">Activity Feed</th>
