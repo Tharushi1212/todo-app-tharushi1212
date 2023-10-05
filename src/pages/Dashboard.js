@@ -40,6 +40,7 @@ const Dashboard = () => {
         <div className="dashboard-section">
           {/* dashboard header */}
           <div className="dashboard-header">
+            {/* dashboard header */}
             <text className="dashboard-text">Dashboard</text>
 
             <div className="dashboard-header-profile">
@@ -76,23 +77,21 @@ const Dashboard = () => {
             </div>
 
             {/* dashboard grid section - all the grids are impoted as components*/}
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                position: 'relative',
-                maxWidth: '90%',
-              }}
-            >
-              <div className="grid-components-wrapper">
+            <div className="grid-components-wrapper">
+              {/* task section */}
+              <div className="task-grid-wrapper">
                 <TasksWrapper />
-                <div className="grid-components-right-wrapper">
-                  <div className="activity-feed-grid">
-                    <ActivityFeed />
-                  </div>
-                  <div className="task-priority-wrapper">
-                    <TasksPriorities />
-                  </div>
+              </div>
+
+              {/* activity feed section */}
+              <div className="grid-components-right-wrapper">
+                <div className="activity-feed-grid">
+                  <ActivityFeed />
+                </div>
+
+                {/* task priority section */}
+                <div className="task-priority-wrapper">
+                  <TasksPriorities />
                 </div>
               </div>
             </div>
@@ -102,5 +101,4 @@ const Dashboard = () => {
     </Fragment>
   );
 };
-
 export default Dashboard;
