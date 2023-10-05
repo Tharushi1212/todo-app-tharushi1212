@@ -38,7 +38,9 @@ const Tasks = () => {
     <div className="component-wrapper">
       {/* task table */}
       <table>
-        <thead className="activity-title-text">Tasks</thead>
+        <thead>
+          <th className="activity-title-text">Tasks</th>
+        </thead>
 
         <tbody>
           {/* map data fetched from the fetchTasks function */}
