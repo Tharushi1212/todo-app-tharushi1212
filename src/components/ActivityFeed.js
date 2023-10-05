@@ -14,17 +14,17 @@ function createData(description, avatar, date) {
 //Created dummy data array
 const rows = [
   createData(
-    '<span className="bold-text">Kushantha Charuka</span><span className="normal-text"> created</span> <span className="pink-text">Contract #00124 need John Beige’s signature</span>',
+    '<span class="bold-text">Kushantha Charuka</span><span class="normal-text"> created</span> <span class="pink-text">Contract #00124 need John Beige’s signature</span>',
     avatar1,
     'Sep 16, 2022 at 11:30 AM'
   ),
   createData(
-    'Lorem ipsum <span className="bold-text">dolor sit amet,</span> consectetur adipiscing elit. <span className="bold-text">Maecenas</span> pretium neque',
+    'Lorem ipsum <span class="bold-text">dolor sit amet,</span> consectetur adipiscing elit. <span class="bold-text">Maecenas</span> pretium neque',
     avatar2,
     'Sep 16, 2022 at 11:45 AM'
   ),
   createData(
-    'Lorem ipsum <span className="bold-text">dolor sit amet,</span> consectetur adipiscing elit. <span className="bold-text">Maecenas</span> pretium neque',
+    'Lorem ipsum <span class="bold-text">dolor sit amet,</span> consectetur adipiscing elit. <span class="bold-text">Maecenas</span> pretium neque',
     avatar2,
     'Sep 16, 2022 at 11:45 AM'
   ),
